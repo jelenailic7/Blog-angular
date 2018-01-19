@@ -1,7 +1,7 @@
 <form #postForm="ngForm" (ngSubmit)="submitPost(post)">
     <div class="form-group">
       <label>Title</label>
-      <input #firstName="ngModel" [(ngModel)]="post.title" name='title' type="text" class="form-control" required minlength="2">  
+      <input #title="ngModel" [(ngModel)]="post.title" name='title' type="text" class="form-control" required minlength="2">  
       <div *ngIf="title.invalid && (title.dirty || title.touched)"
        class="alert alert-danger">
         <div *ngIf="title.errors.required">
@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
         <label>Text</label>
-        <input #firstName="ngModel" [(ngModel)]="post.text" name='text' type="text" class="form-control" required maxlength="300">  
+        <input #text="ngModel" [(ngModel)]="post.text" name='text' type="text" class="form-control" required maxlength="300">  
         <div *ngIf="text.invalid && (text.dirty || text.touched)"
          class="alert alert-danger">
           <div *ngIf="text.errors.required">
@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
           <label>Created at</label>
-          <input #firstName="ngModel" [(ngModel)]="post.created_at" name='created_at' type="text" class="form-control" required>  
+          <input #created_at="ngModel" [(ngModel)]="post.created_at" name='created_at' type="text" class="form-control" required>  
           <div *ngIf="title.invalid && (title.dirty || title.touched)"
            class="alert alert-danger">
             <div *ngIf="title.errors.required">

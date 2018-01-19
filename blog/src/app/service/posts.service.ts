@@ -39,9 +39,18 @@ private posts : Post [] = [
   public getPostById(id: number ){
     return this.getPosts().find(post => post['id'] == id );
   }
+  public editPost(post: Post)
+  {
+    this.posts.splice(this.posts.indexOf(post),1,post);
+  }
+  public deletePost(post: Post)
+  {
+    this.posts.splice(this.posts.indexOf(post),1);
+  }
 
   public addPost(post: Post)
   {
+    console.log(post);
     this.posts.push(new Post({
       id: this.idCount,
       title: post.title,
@@ -50,7 +59,6 @@ private posts : Post [] = [
 
     }));
   
-    this.idCount = this.idCount++;
   }
 }
 

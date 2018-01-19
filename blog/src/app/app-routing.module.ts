@@ -22,9 +22,13 @@ const appRoutes: Routes = [
       component: SinglePostComponent
     },
     {
-        path: 'add',
-        component: PostFormComponent
-      }
+      path: 'add',
+      component: PostFormComponent
+    },
+    {
+      path: 'edit/:id',
+      component: PostFormComponent
+    }
   ];
   
   @NgModule({

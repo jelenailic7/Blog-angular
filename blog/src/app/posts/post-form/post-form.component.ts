@@ -14,18 +14,29 @@ export class PostFormComponent implements OnInit {
 
   private post: Post;
 
-  constructor(private postService: PostsService, private router: Router, private route:ActivatedRoute) {
+  constructor(private postsService: PostsService, private router: Router, private route:ActivatedRoute) {
     this.post = new Post({});
+
+    this.route.params.subscribe(params =>{
+      if(params['id']){
+        this.post = this.postsService.getPostById(+params['id']);
+      }
+})
 
 
   }
 
   submitPost(post: Post)
   {
-    this.postService.addPost(this.post);
+    if(this.post.id){
+      this.postsService.editPost(this.post);
+    }else {
+    this.postsService.addPost(this.post);
+    }
     this.router.navigate(['/posts']);
 
   }
+
 
   public preview(){
     alert(`
