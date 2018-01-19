@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './posts/single-post/single-post.component';
+import { PostFormComponent } from './posts/post-form/post-form.component';
+
 
 
 
@@ -18,8 +20,11 @@ const appRoutes: Routes = [
     {
       path: 'posts/:id',
       component: SinglePostComponent
-    }
-   
+    },
+    {
+        path: 'add',
+        component: PostFormComponent
+      }
   ];
   
   @NgModule({

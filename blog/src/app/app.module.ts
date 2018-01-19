@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './service/posts.service';
 import { SinglePostComponent } from './posts/single-post/single-post.component';
+import { PostFormComponent } from './posts/post-form/post-form.component';
 
 
 
@@ -16,11 +18,13 @@ import { SinglePostComponent } from './posts/single-post/single-post.component';
     AppComponent,
     LayoutComponent,
     PostsComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
 
   ],
   providers: [PostsService],

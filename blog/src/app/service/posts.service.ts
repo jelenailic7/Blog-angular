@@ -4,7 +4,12 @@ import { Post } from '../models/post';
 @Injectable()
 export class PostsService {
 
-constructor() { }
+idCount:number;
+
+constructor() { 
+  this.idCount = this.posts.length + 1;
+}
+
 
 private posts : Post [] = [
   {
@@ -20,7 +25,7 @@ private posts : Post [] = [
     created_at: '19-01-2018'
   },
   {
-    id:1,
+    id:3,
     title:'Treci naslov',
     text: 'Ovde ide text za treci post',
     created_at: '19-01-2018'
@@ -32,7 +37,20 @@ private posts : Post [] = [
     return this.posts;
   }
   public getPostById(id: number ){
-    return this.getPosts().find(post =>  post['id'] == id );
+    return this.getPosts().find(post => post['id'] == id );
+  }
+
+  public addPost(post: Post)
+  {
+    this.posts.push(new Post({
+      id: this.idCount,
+      title: post.title,
+      text: post.text,
+      created_at: post.created_at
+
+    }));
+  
+    this.idCount = this.idCount++;
   }
 }
 

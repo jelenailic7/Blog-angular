@@ -4,11 +4,18 @@ export class Post {
     public text: string;
     public created_at :string;
     
-    constructor( id:number, title:string, text:string, created_at:string )
+    constructor(post)
     {
-        this.id = id;
-        this.title = title;
-        this.text = text;
-        this.created_at = created_at;
+        this.id = post.id;
+        this.title = post.title;
+        this.text = post.text;
+        this.created_at = post.created_at;
     }
+
+    // constructor(
+    // public id: number,
+    // public title: string,
+    // public text: string,
+    // public created_at :string
+    // ){}
 }
