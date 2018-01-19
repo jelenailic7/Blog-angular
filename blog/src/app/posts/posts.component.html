@@ -1,3 +1,12 @@
-<p>
-  posts works!
-</p>
+<div class = "col-sm-8 blog-main">
+  <div class ="blog post" *ngFor="let post of posts">
+    <table class="table ">
+      <tbody>
+        <tr>
+      <td><h4 class ="blog-post-title">{{ post.title }}</h4><td> 
+      <td> <a [routerLink]="['/posts', post.id]" class="btn btn-default">View post </a><td>
+        </tr>
+     </tbody>
+    </table>
+  </div>
+</div>
