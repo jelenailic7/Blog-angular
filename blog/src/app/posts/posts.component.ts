@@ -9,7 +9,8 @@ import { Post } from '../models/post';
 })
 export class PostsComponent implements OnInit {
 
-  posts: Post [];
+  private posts: Post [];
+  
   
   constructor(private postsService: PostsService) { 
 
@@ -17,7 +18,13 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postsService.getPosts();
-
   }
+
+  public deletePost(post:Post)
+  {
+  return  this.postsService.deletePost(post);     
+  }
+
+ 
 
 }

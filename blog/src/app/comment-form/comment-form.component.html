@@ -1,0 +1,26 @@
+
+<form #commentForm ="ngForm" (ngSubmit) = "submit()">
+    <div class="form-group row">
+        <div class="col-7"> 
+          <input #username="ngModel" placeholder="username..." [(ngModel)]="comment.username" name='username' type="text" class="form-control" required>  
+            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+              class="alert alert-danger">
+              <div *ngIf="username.errors.required" class="alert alert-danger">
+              Title is required.
+              </div>
+          </div>
+      </div>
+    <div class="col-7">
+      <input #text="ngModel" placeholder="text..." [(ngModel)]="comment.text" name='text' type="text" class="form-control" required>  
+        <div *ngIf="text.invalid && (text.dirty || text.touched)"
+        class="alert alert-danger">
+          <div *ngIf="text.errors.required" class="alert alert-danger">
+            Title is required.
+        </div>
+      </div>
+     </div>
+     <div class="col-1">
+  <button type="submit"  class="btn btn-primary">Add comment</button>
+  </div>
+ </div>
+</form>

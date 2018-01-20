@@ -10,6 +10,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './service/posts.service';
 import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { PostFormComponent } from './posts/post-form/post-form.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 
 
@@ -19,7 +20,8 @@ import { PostFormComponent } from './posts/post-form/post-form.component';
     LayoutComponent,
     PostsComponent,
     SinglePostComponent,
-    PostFormComponent
+    PostFormComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule,

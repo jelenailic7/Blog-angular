@@ -3,9 +3,11 @@
     <table class="table ">
       <tbody>
         <tr>
-      <td><h4 class ="blog-post-title">{{ post.title }}</h4><td> 
-      <td> <a [routerLink]="['/posts', post.id]" class="btn btn-default">View post </a><td>
-          <td><a [routerLink]="['/edit', post.id]" class="btn btn-default">Edit post </a><td>
+          <td><h4 class ="blog-post-title">{{ post.title }}</h4><td> 
+          <td><a [routerLink]="['/posts', post.id]" class="btn btn-default">View post</a><td>
+          <td><a [routerLink]="['/edit', post.id]" class="btn btn-default">Edit post</a><td>
+          <td><button type="button" (click)="deletePost(post)" class="btn btn-default">Delete</button><td>
+
         </tr>
      </tbody>
     </table>
