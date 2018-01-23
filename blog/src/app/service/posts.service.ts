@@ -67,7 +67,11 @@ private posts : Post [] = [
 
   public addComment(id:number, comment: Comment) {
     let post = this.getPostById(id);
-    post.comments.push(comment);       
+    if (post.comments) {  
+     post.comments.push(comment);  
+    } else {  
+      post.comments = [comment];  
+    }         
   }      
   
 }

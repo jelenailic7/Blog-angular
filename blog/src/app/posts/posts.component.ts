@@ -25,6 +25,12 @@ export class PostsComponent implements OnInit {
   return  this.postsService.deletePost(post);     
   }
 
- 
+   public preview(post){
+    alert(`
+    Title: ${post.title}, 
+    Text: ${post.text},
+    Date: ${post.created_at},
+    `);
+  }
 
 }

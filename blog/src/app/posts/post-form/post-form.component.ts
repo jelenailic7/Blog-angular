@@ -31,13 +31,6 @@ export class PostFormComponent implements OnInit {
   }
 
 
-  public preview(){
-    alert(`
-    Title: ${this.post.title}, 
-    Text: ${this.post.text},
-    Date: ${this.post.created_at},
-    `);
-  }
   ngOnInit() {
     this.route.params.subscribe(params =>{
       if(params['id']){

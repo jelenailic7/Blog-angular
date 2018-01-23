@@ -9,9 +9,10 @@ import { Comment } from '../models/comment';
 export class CommentFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Comment>();
 
-private comment: Comment=new Comment({});; 
+private comment: Comment;
 
   constructor() {
+  this.comment = new Comment({});
    }
 
   public submit() 

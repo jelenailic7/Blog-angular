@@ -15,7 +15,7 @@
     <div class="form-group">
         <label>Text</label>
         <input #text="ngModel" [(ngModel)]="post.text" name='text' type="text" class="form-control" required maxlength="300">  
-        <div *ngIf="text.invalid && (text.dirty || text.touched)"
+        <div *ngIf="text.invalid &&  (text.touched || text.dirty)"
          class="alert alert-danger">
           <div *ngIf="text.errors.required">
             Text is required.
@@ -37,6 +37,5 @@
         </div>
 <button type="submit" class = "btn btn-primary" >Submit</button>
 <button type="button" class = "btn btn-primary" (click)="postForm.reset()">Reset</button>
-<button type="button" class = "btn btn-primary" (click)="preview()">Preview</button>
 
 </form>

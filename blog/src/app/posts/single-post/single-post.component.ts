@@ -16,15 +16,14 @@ private post:Post;
   }
 
   ngOnInit() {
-    // let id = +this.route.snapshot.paramMap.get('id'); 
-    // this.post = this.postsService.getPostById(id);
+   
     this.route.params.subscribe((params: Params) => {
       this.post = this.postsService.getPostById(params["id"]);
     });
   }
+  
   getSubmitComment(comment) {
   this.postsService.addComment(this.post.id, comment);
-    
     
   }  
 
