@@ -11,6 +11,7 @@ import { PostsService } from './service/posts.service';
 import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { PostFormComponent } from './posts/post-form/post-form.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
+import { PostRowComponent } from './posts/post-row/post-row.component';
 
 
 
@@ -21,7 +22,8 @@ import { CommentFormComponent } from './comment-form/comment-form.component';
     PostsComponent,
     SinglePostComponent,
     PostFormComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    PostRowComponent
   ],
   imports: [
     BrowserModule,
