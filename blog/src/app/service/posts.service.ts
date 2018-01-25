@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../models/post';
+import { Observer } from 'rxjs/Observer';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PostsService {
@@ -49,8 +51,15 @@ private posts : Post [] = [
   }
   public deletePost(post: Post)
   {
-    this.posts.splice(this.posts.indexOf(post),1);
-  }
+  //  this.posts.splice(this.posts.indexOf(post),1);
+    return new Observable ((o: Observer<any>) => {
+        setTimeout(() => {
+          o.next(post);
+          return o.complete();
+        }, 1000);
+    });
+   }
+  
 
   public addPost(post: Post)
   {

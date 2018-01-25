@@ -22,7 +22,10 @@ export class PostsComponent implements OnInit {
 
   public deletePost(post:Post)
   {
-  return  this.postsService.deletePost(post);     
+  return  this.postsService.deletePost(post)
+    .subscribe((post:Post) => {
+      this.posts.splice(this.posts.indexOf(post),1);    
+    });
   }
 
    public preview(post){
@@ -34,3 +37,4 @@ export class PostsComponent implements OnInit {
   }
 
 }
+

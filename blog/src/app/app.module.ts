@@ -12,6 +12,7 @@ import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { PostFormComponent } from './posts/post-form/post-form.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { PostRowComponent } from './posts/post-row/post-row.component';
+import { PageTitleService } from './service/page-title.service';
 
 
 
@@ -31,7 +32,9 @@ import { PostRowComponent } from './posts/post-row/post-row.component';
     FormsModule
 
   ],
-  providers: [PostsService],
+  providers: [PostsService, PageTitleService,
+    {provide: 'APP_CONFIG_DEFAULT_TITLE', useValue: "Blog"}   //useValue is just the value that is injected as is
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

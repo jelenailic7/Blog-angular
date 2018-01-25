@@ -3,6 +3,7 @@
   <p class = "blog-post-meta">{{ post.created_at }}</p>
   <p> {{ post.text }}</p>
 
+ <p>{{ message }}</p> 
 
 <h6>Comments:</h6>
 <ul *ngFor ="let comment of post.comments">
@@ -12,4 +13,3 @@
 </ul>
 <app-comment-form (onSubmit)="getSubmitComment($event)"></app-comment-form>
 </div>
-
